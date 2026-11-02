@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Syne', sans-serif;
+    --font-serif: 'Newsreader', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FBF9F5;
+    color: #19221E;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.03em;
+  }
+
+  .font-serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+  }
+}
+
+/* --- Premium Background Gradients & Glows --- */
+.bg-cream-radial {
+  background: radial-gradient(circle at 50% 0%, rgba(240, 235, 224, 0.9) 0%, rgba(251, 249, 245, 1) 75%);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(220, 216, 206, 0.65);
+}
+
+.glass-card-dark {
+  background: rgba(15, 76, 58, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 76, 58, 0.1);
+}
+
+/* Subtle organic grain overlay */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(21, 36, 30, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(21, 36, 30, 0.03) 1px, transparent 1px);
+}
+
+/* Floating ambient glow animation */
+@keyframes ambient-glow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate(15px, -15px) scale(1.08);
+    opacity: 0.7;
+  }
+}
+
+.animate-ambient-glow {
+  animation: ambient-glow 8s ease-in-out infinite;
+}
+
+/* Soft floating badge loop */
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-subtle {
+  animation: float-subtle 4.5s ease-in-out infinite;
+}
+
+@keyframes float-subtle-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+.animate-float-delayed {
+  animation: float-subtle-delayed 5s ease-in-out infinite;
+}
+
+/* Medical spine pulse loop */
+@keyframes spine-scan {
+  0% {
+    top: 5%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    top: 95%;
+    opacity: 0;
+  }
+}
+
+.animate-spine-scan {
+  animation: spine-scan 3.5s ease-in-out infinite;
+}
+
+/* Shimmer border for premium elements */
+@keyframes border-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.border-shimmer {
+  background-size: 200% 200%;
+  animation: border-shimmer 6s ease infinite;
+}
